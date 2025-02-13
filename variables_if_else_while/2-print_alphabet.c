@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Description: Prints the alphabet in lowercase using only 2 putchar calls.
+ * Description: Prints the alphabet in lowercase using putchar
  *
  * Return: Always 0 (Success)
  */
@@ -11,7 +11,7 @@ int main(void)
 {
 char *letters = "abcdefghijklmnopqrstuvwxyz\n";
 
-while (*letters)  /* Iterate through the string */
+while (*letters) 
 putchar(*letters++);
 
 return (0);
