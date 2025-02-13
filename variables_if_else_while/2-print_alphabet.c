@@ -1,11 +1,23 @@
 #include <stdio.h>
 
-int main()
+/**
+ * main - Entry point
+ *
+ * Description: Prints the alphabet in lowercase,
+ * then uppercase, followed by a new line.
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
 {
-for(int x = 'A'; x <= 'Z'; x++)
-    {
-x = tolower(x);
-putchar(x);
-    }
-return 0;
+char ch;
+for (ch = 'a'; ch <= 'z'; ch++)
+putchar(ch);
+
+for (ch = 'A'; ch <= 'Z'; ch++)
+putchar(ch);
+
+putchar('\n');
+
+return (0);
 }
