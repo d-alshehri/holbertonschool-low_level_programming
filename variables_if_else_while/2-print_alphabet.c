@@ -3,18 +3,16 @@
 /**
  * main - Entry point
  *
- * Description: Prints the alphabet in lowercase,
- * followed by a new line.
+ * Description: Prints the alphabet in lowercase using only 2 putchar calls.
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-char ch;
-for (ch = 'a'; ch <= 'Z'; ch++)
-putchar(ch);
+char *letters = "abcdefghijklmnopqrstuvwxyz\n";
 
-putchar('\n');
+while (*letters)  /* Iterate through the string */
+putchar(*letters++);
 
 return (0);
 }
