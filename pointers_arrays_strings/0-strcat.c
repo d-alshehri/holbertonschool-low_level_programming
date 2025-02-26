@@ -28,5 +28,5 @@ j++;
 /* Null-terminate the result */
 dest[i] = '\0';
 
-return dest;
+{return dest;}
 }
