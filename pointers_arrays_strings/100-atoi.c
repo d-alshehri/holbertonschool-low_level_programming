@@ -11,25 +11,26 @@ int _atoi(char *s)
     int sign = 1;
     unsigned int num = 0;
 
-    // Iterate through the string
+    /* Iterate through the string */
     while (*s)
     {
-        // If the current character is a number
+        /* If the current character is a number */
         if (*s >= '0' && *s <= '9')
         {
-            // Build the number
+            /* Build the number */
             num = num * 10 + (*s - '0');
         }
-        // If the current character is a '+' or '-' sign, handle it
+        /* If the current character is a '-' sign, handle it */
         else if (*s == '-')
         {
             sign *= -1;
         }
+        /* If the current character is a '+' sign, handle it */
         else if (*s == '+')
         {
             sign *= 1;
         }
-        // If a non-numeric character is encountered after a number, break out
+        /* If a non-numeric character is encountered after a number, break out */
         else if (num > 0)
         {
             break;
@@ -37,6 +38,6 @@ int _atoi(char *s)
         s++;
     }
 
-    // Apply the sign to the number and return it
+    /* Apply the sign to the number and return it */
     return sign * num;
 }
