@@ -3,7 +3,6 @@
 /**
  * _atoi - converts a string to an integer.
  * @s: string to convert
- * 
  * Return: integer value of the string
  */
 int _atoi(char *s)
@@ -31,6 +30,5 @@ break;
 }
 s++;
 }
-
 {return sign * num; }
 }
