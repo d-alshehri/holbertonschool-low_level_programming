@@ -12,18 +12,19 @@
 
 unsigned int _strspn(char *s, char *accept)
 {unsigned int count = 0;
-while (s[count] != '\0') {
-int found = 0;
+while (s[count] != '\0')
+{int found = 0;
 int i;
-for (i = 0; accept[i] != '\0'; i++){
-if (s[count] == accept[i]){
-found = 1;
+for (i = 0; accept[i] != '\0'; i++)
+{if (s[count] == accept[i])
+{found = 1;
 break;
 }
 }
 if (found == 0)
-{break; }
-else if (found == 1) {count++;}
+break;
+else if (found == 1)
+{count++; }
 }
 {return count; }
 }
