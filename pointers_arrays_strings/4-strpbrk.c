@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stddef.h>  // For NULL
+#include <stddef.h>  /* For NULL */
 
 /**
  * _strpbrk - Searches a string for any of a set of bytes.
@@ -10,20 +10,22 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-    if (!s || !accept)  // Handle NULL inputs
-        return NULL;
+    char *a;
 
-    while (*s)  // Loop through each character in s
+    if (s == NULL || accept == NULL)  /* Handle NULL inputs */
+        return (NULL);
+
+    while (*s)  /* Loop through each character in s */
     {
-        char *a = accept;
-        while (*a)  // Check each character in accept
+        a = accept;
+        while (*a)  /* Check each character in accept */
         {
-            if (*s == *a)  // If there is a match, return pointer to it
-                return s;
+            if (*s == *a)  /* If there is a match, return pointer to it */
+                return (s);
             a++;
         }
-        s++;  // Move to next character in s
+        s++;  /* Move to next character in s */
     }
 
-    return NULL;  // Return NULL if no match found
+    return (NULL);  /* Return NULL if no match found */
 }
