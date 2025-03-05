@@ -33,6 +33,5 @@ while(accept[ac] != '\0')
 ac++;
 }
 }sc ++;
-}
 {return NULL; }
 }
