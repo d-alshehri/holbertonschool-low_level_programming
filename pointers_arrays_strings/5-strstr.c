@@ -25,7 +25,8 @@ int j = 0;
 if (*needle == '\0')
 {return haystack; }
 while (haystack[i] != '\0')
-{if (haystack[i] == needle[0])
+{
+if (haystack[i] == needle[0])
 {j = 0;
 while (needle[j] != '\0' && haystack[i + j] == needle[j])
 {j++; }
