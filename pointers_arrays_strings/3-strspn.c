@@ -16,7 +16,7 @@ while (s[count] != '\0')
 {int found = 0;
 int i;
 for (i = 0; accept[i] != '\0'; i++)
-{if (s[count] == accept[i])
+if (s[count] == accept[i])
 {found = 1;
 break;
 }
