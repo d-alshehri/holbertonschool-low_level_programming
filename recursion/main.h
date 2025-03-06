@@ -1,6 +1,9 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+int is_palindrome(char *s);
+int _strlen(char *s);
+int check_palindrome(char *s, int start, int end);
 int check_prime(int n, int i);
 int is_prime_number(int n);
 int _sqrt_helper(int n, int guess);
