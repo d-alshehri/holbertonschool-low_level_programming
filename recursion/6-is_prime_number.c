@@ -16,7 +16,8 @@ if (n <= 1)
 }
 
 /**
- * check_prime - Helper function to check if n is divisible by any number from 2 to sqrt(n)
+ * check_prime - Helper function to check if n is divisible by any number
+ * from 2 to sqrt(n)
  * @n: The number to check
  * @i: The current divisor to check
  *
