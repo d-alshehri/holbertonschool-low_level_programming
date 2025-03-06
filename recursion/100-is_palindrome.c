@@ -8,8 +8,8 @@
 */
 int is_palindrome(char *s)
 {
-int len = _strlen(s);  /* Get the length of the string */
-return check_palindrome(s, 0, len - 1);  /* Call the recursive helper */
+int len = _strlen(s);
+{return (check_palindrome(s, 0, len - 1)); }
 }
 
 /**
@@ -21,8 +21,8 @@ return check_palindrome(s, 0, len - 1);  /* Call the recursive helper */
 int _strlen(char *s)
 {
 if (*s == '\0')
-return 0;
-return 1 + _strlen(s + 1);  /* Recursively count characters */
+{return (0); }
+{return (1 + _strlen(s + 1)); }
 }
 
 /**
@@ -35,11 +35,11 @@ return 1 + _strlen(s + 1);  /* Recursively count characters */
 */
 int check_palindrome(char *s, int start, int end)
 {
-if (start >= end)  /* Base case: if start index is greater than or equal to end index */
-return 1;  /* String is a palindrome */
+if (start >= end)
+{return (1); }
 
-if (s[start] != s[end])  /* If characters at start and end are different, not a palindrome */
-return 0;
+if (s[start] != s[end])
+{return (0); }
 
-return check_palindrome(s, start + 1, end - 1);  /* Recursively check the inner substring */
+{return (check_palindrome(s, start + 1, end - 1)); }
 }
