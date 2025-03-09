@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 /**
  * _strdup - Duplicates a string by allocating new memory
@@ -13,11 +12,16 @@
 char *_strdup(char *str)
 {
 char *dup_str;
+int length = 0;
 if (str == NULL)
 {return NULL; }
+while (str[length] != '\0')
+length++;
 dup_str = malloc(strlen(str) + 1);
 if (dup_str == NULL)
 {return NULL; }
-strcpy(dup_str, str);
+for (int i = 0; i < length; i++)
+dup_str[i] = str[i];
+dup_str[length] = '\0';
 {return dup_str; }
 }
