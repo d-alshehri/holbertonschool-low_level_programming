@@ -19,7 +19,6 @@ arr = malloc(size * sizeof(char));
 if (arr == NULL) {
 return NULL;
 }
-unsigned int i;
 for(i = 0; i < size; i++){
 arr[i] = c;
 }
