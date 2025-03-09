@@ -5,7 +5,6 @@
  * argstostr - concatenates all the arguments of the program
  * @ac: argument count
  * @av: argument vector
- * 
  * Return: a pointer to the new string, or NULL if it fails
  */
 
