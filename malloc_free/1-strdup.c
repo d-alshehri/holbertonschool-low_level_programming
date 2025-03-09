@@ -19,7 +19,7 @@ if (str == NULL)
 {return NULL; }
 while (str[length] != '\0')
 length++;
-dup_str = malloc(strlen(str) + 1);
+dup_str = malloc(length + 1);
 if (dup_str == NULL)
 {return NULL; }
 for (i = 0; i < length; i++)
