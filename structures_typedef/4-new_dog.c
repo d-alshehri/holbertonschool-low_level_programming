@@ -1,56 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "dog.h"
 
 /**
- * new_dog - Creates a new dog.
- * @name: Name of the dog.
- * @age: Age of the dog.
- * @owner: Owner of the dog.
+ * new_dog - creates a new dog
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
  *
- * Return: Pointer to the new dog_t object, or NULL if failure.
+ * Return: pointer to the new dog_t struct or NULL if fails
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-dog_t *new_dog;
-int i;
+    dog_t *dog;
+    char *name_copy, *owner_copy;
 
-new_dog = malloc(sizeof(dog_t));
-if (new_dog == NULL)
-{return (NULL); }
+    dog = malloc(sizeof(dog_t));
+    if (dog == NULL)
+        return (NULL);
 
-new_dog->name = malloc(0);
-if (new_dog->name == NULL)
-{
-free(new_dog);
-{return (NULL); }
-}
+    name_copy = malloc(strlen(name) + 1);
+    if (name_copy == NULL)
+    {
+        free(dog);
+        return (NULL);
+    }
+    strcpy(name_copy, name);
 
-new_dog->owner = malloc(0);
-if (new_dog->owner == NULL)
-{
-free(new_dog->name);
-free(new_dog);
-{return (NULL); }
-}
+    owner_copy = malloc(strlen(owner) + 1);
+    if (owner_copy == NULL)
+    {
+        free(name_copy);
+        free(dog);
+        return (NULL);
+    }
+    strcpy(owner_copy, owner);
 
-i = 0;
-while (name[i] != '\0')
-{
-new_dog->name[i] = name[i];
-i++;
-}
-new_dog->name[i] = '\0';
+    dog->name = name_copy;
+    dog->age = age;
+    dog->owner = owner_copy;
 
-i = 0;
-while (owner[i] != '\0')
-{
-new_dog->owner[i] = owner[i];
-i++;
-}
-new_dog->owner[i] = '\0';
-
-new_dog->age = age;
-
-{return (new_dog); }
+    return (dog);
 }
