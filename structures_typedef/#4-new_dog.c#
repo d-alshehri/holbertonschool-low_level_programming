@@ -42,8 +42,7 @@ if (name_copy == NULL)
 free(dog);
 return (NULL);
 }
- int i;
-for (i = 0; name[i] != '\0'; i++)
+for (int i = 0; name[i] != '\0'; i++)
 name_copy[i] = name[i];
 name_copy[_strlen(name)] = '\0';
 
@@ -54,9 +53,9 @@ free(name_copy);
 free(dog);
 {return (NULL); }
 }
- int i;
-for (i = 0; owner[i] != '\0'; i++)
-owner_copy[i] = owner[i];
+i
+for (int i = 0; owner[i] != '\0'; i++)
+ontwner_copy[i] = owner[i];
 owner_copy[_strlen(owner)] = '\0';
 
 dog->name = name_copy;
