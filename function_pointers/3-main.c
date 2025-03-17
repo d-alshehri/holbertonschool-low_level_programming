@@ -2,6 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - Entry point for the calculator program
+ * @argc: Number of arguments
+ * @argv: Array of argument strings
+ *
+ * Return: 0 on success, or an appropriate error code
+ */
+
 int main(int argc, char *argv[])
 {
 int num1, num2, result;
