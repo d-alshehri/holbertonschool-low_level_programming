@@ -22,32 +22,24 @@ while (format && format[i])
 if (i > 0)
 printf(", ");
 
-switch (format[i])
+if (format[i] == 'c')
+printf("%c", va_arg(args, int));  // 'char' is promoted to 'int'
+if (format[i] == 'i')
+printf("%d", va_arg(args, int));
+if (format[i] == 'f')
+printf("%f", va_arg(args, double));  // 'float' is promoted to 'double'
+if (format[i] == 's')
 {
-case 'c':
-c = va_arg(args, int);
-printf("%c", c);
-break;
-case 'i':
-num = va_arg(args, int);
-printf("%d", num);
-break;
-case 'f':
-f = va_arg(args, double);
-printf("%f", f);
-break;
-case 's':
 str = va_arg(args, char *);
 if (str)
 printf("%s", str);
-else
+if (!str)
 printf("(nil)");
-break;
-default:
-break;
 }
+
 i++;
 }
+
 printf("\n");
 va_end(args);
 }
