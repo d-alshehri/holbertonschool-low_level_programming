@@ -1,5 +1,5 @@
 #include <stdio.h>
-0;10;1c#include <stdarg.h>
+#include <stdarg.h>
 
 /**
  * print_numbers - Prints numbers, followed by a new line.
