@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdarg.h>
+0;10;1c#include <stdarg.h>
 
 /**
  * print_numbers - Prints numbers, followed by a new line.
@@ -23,7 +23,7 @@ return;
 va_start(numbers, n);
 
 for (i = 0; i < n ; i++){
-printf("%d ", va_arg(numbers, int));
+printf("%d", va_arg(numbers, int));
 if (separator != NULL && i < n - 1)
 printf("%s", separator);
 }
