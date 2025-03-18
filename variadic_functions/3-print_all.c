@@ -25,7 +25,7 @@ printf(", ");
 switch (format[i])
 {
 case 'c':
-c = va_arg(args, int);  // 'char' is promoted to 'int'
+c = va_arg(args, int);
 printf("%c", c);
 break;
 case 'i':
