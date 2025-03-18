@@ -19,9 +19,9 @@ if (n == 0)
 {return 0; }
 
 va_start(elements, n);
-   
+
 for (i = 0; i < (int)n ; i++)
 total += va_arg(elements, int);
 va_end(elements);
-return total;
+{return total; }
 }
