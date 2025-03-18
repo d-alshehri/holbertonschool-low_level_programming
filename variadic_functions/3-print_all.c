@@ -4,13 +4,18 @@
 void print_all(const char * const format, ...)
 {
     va_list args;
-    va_start(args, format);
-
-    const char *ptr = format;
+    const char *ptr;
     char *str;
-    int i = 0;
+    int i;
+    char c;
+    int num;
+    double f;
 
-    while (*ptr && format)
+    va_start(args, format);
+    ptr = format;
+    i = 0;
+
+    while (*ptr)
     {
         if (i && (*ptr == 'c' || *ptr == 'i' || *ptr == 'f' || *ptr == 's'))
             printf(", ");
@@ -18,15 +23,18 @@ void print_all(const char * const format, ...)
         switch (*ptr)
         {
             case 'c':
-                printf("%c", va_arg(args, int));
+                c = (char)va_arg(args, int);
+                printf("%c", c);
                 i = 1;
                 break;
             case 'i':
-                printf("%d", va_arg(args, int));
+                num = va_arg(args, int);
+                printf("%d", num);
                 i = 1;
                 break;
             case 'f':
-                printf("%f", va_arg(args, double));
+                f = va_arg(args, double);
+                printf("%f", f);
                 i = 1;
                 break;
             case 's':
