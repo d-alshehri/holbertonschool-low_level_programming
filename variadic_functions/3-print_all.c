@@ -20,31 +20,31 @@ void print_all(const char * const format, ...)
         if (i && (*ptr == 'c' || *ptr == 'i' || *ptr == 'f' || *ptr == 's'))
             printf(", ");
 
-        if (*ptr == 'c')
+        if (*ptr == 'c' || *ptr == 'i' || *ptr == 'f' || *ptr == 's')
         {
-            c = (char)va_arg(args, int);
-            printf("%c", c);
-            i = 1;
-        }
-        else if (*ptr == 'i')
-        {
-            num = va_arg(args, int);
-            printf("%d", num);
-            i = 1;
-        }
-        else if (*ptr == 'f')
-        {
-            f = va_arg(args, double);
-            printf("%f", f);
-            i = 1;
-        }
-        else if (*ptr == 's')
-        {
-            str = va_arg(args, char *);
-            if (str == NULL)
-                printf("(nil)");
-            else
-                printf("%s", str);
+            if (*ptr == 'c')
+            {
+                c = (char)va_arg(args, int);
+                printf("%c", c);
+            }
+            if (*ptr == 'i')
+            {
+                num = va_arg(args, int);
+                printf("%d", num);
+            }
+            if (*ptr == 'f')
+            {
+                f = va_arg(args, double);
+                printf("%f", f);
+            }
+            if (*ptr == 's')
+            {
+                str = va_arg(args, char *);
+                if (str == NULL)
+                    printf("(nil)");
+                if (str != NULL)
+                    printf("%s", str);
+            }
             i = 1;
         }
 
