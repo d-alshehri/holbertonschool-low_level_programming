@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+0;10;1c#include <stdlib.h>
 #include <stdarg.h>
 
 /**
@@ -19,7 +19,7 @@ if ( n==0 )
    
 va_start(elements, n);
    
-for (i = 0; i < n ; i++){
+for (i = 0; i < (int)n ; i++){
 total += va_arg(elements, int);
 }
 va_end(elements);
