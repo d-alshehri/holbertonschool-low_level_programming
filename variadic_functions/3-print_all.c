@@ -13,7 +13,7 @@ char *str;
 char *separator = "";
 
 va_start(args, format);
-    
+
 while (format && format[i])
 {
 switch (format[i])
@@ -40,7 +40,7 @@ continue;
 separator = ", ";
 i++;
 }
-    
+
 printf("\n");
 va_end(args);
 }
