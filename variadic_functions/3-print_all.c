@@ -1,56 +1,46 @@
-#include <stdarg.h>
 #include <stdio.h>
+#include <stdarg.h>
 
+/**
+ * print_all - Prints anything based on the format specifier
+ * @format: List of types of arguments passed to the function
+ */
 void print_all(const char * const format, ...)
 {
-    va_list args;
-    const char *ptr;
-    char *str;
-    int i;
-    char c;
-    int num;
-    double f;
+va_list args;
+int i = 0;
+char *str;
+char *separator = "";
 
-    va_start(args, format);
-    ptr = format;
-    i = 0;
-
-    while (*ptr)
-    {
-        if (i && (*ptr == 'c' || *ptr == 'i' || *ptr == 'f' || *ptr == 's'))
-            printf(", ");
-
-        if (*ptr == 'c' || *ptr == 'i' || *ptr == 'f' || *ptr == 's')
-        {
-            if (*ptr == 'c')
-            {
-                c = (char)va_arg(args, int);
-                printf("%c", c);
-            }
-            if (*ptr == 'i')
-            {
-                num = va_arg(args, int);
-                printf("%d", num);
-            }
-            if (*ptr == 'f')
-            {
-                f = va_arg(args, double);
-                printf("%f", f);
-            }
-            if (*ptr == 's')
-            {
-                str = va_arg(args, char *);
-                if (str == NULL)
-                    printf("(nil)");
-                if (str != NULL)
-                    printf("%s", str);
-            }
-            i = 1;
-        }
-
-        ptr++;
-    }
-
-    va_end(args);
-    printf("\n");
+va_start(args, format);
+    
+while (format && format[i])
+{
+switch (format[i])
+{
+case 'c':
+printf("%s%c", separator, va_arg(args, int));
+break;
+case 'i':
+printf("%s%d", separator, va_arg(args, int));
+break;
+case 'f':
+printf("%s%f", separator, va_arg(args, double));
+break;
+case 's':
+str = va_arg(args, char *);
+if (!str)
+str = "(nil)";
+printf("%s%s", separator, str);
+break;
+default:
+i++;
+continue;
+}
+separator = ", ";
+i++;
+}
+    
+printf("\n");
+va_end(args);
 }
