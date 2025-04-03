@@ -33,7 +33,7 @@ if (argc != 3)
 error_exit(97, "Usage: cp file_from file_to", "");
 fd_from = open(argv[1], O_RDONLY);
 if (fd_from == -1)
-print_error_and_exit(98, "Error: Can't read from file %s\n", argv[1]);
+error_exit(98, "Error: Can't read from file %s", argv[1]);
 fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 if (fd_to == -1)
 {
